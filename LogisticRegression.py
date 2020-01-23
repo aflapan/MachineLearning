@@ -19,7 +19,6 @@ class LogisticRegression:
         X_train, y_train, weights, and bias."""
         (n,p) = self.X_train.shape
         LinearTerms = np.matmul(self.X_train, weights) + bias
-        y_pred = self.Sigmoid(LinearTerms)
         NewLoss = np.log(1 + np.exp(-self.y_train * LinearTerms))
         return sum(NewLoss)/n
         
