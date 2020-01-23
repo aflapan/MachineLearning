@@ -25,7 +25,8 @@ class LogisticRegression:
         
         
     def Train(self, StepSize = 0.1, epsilon = 0.0001, MaxIter = 10000):
-        """ Runs gradient Descent on the logistic regression loss function
+        """ Runs gradient descent with given step size
+        on the logistic regression loss function
         with respect to the weight vector and intercept."""
         (n,p) = self.X_train.shape
         weights = np.zeros((p,))
@@ -49,8 +50,7 @@ class LogisticRegression:
     
     def ComputeGradientLoss(self, weights, bias):
         """Computes the gradient of the logistic regression loss
-        function for a single data sample x and its label
-        y with respect to the weights and bias."""
+        function with respect to the weights and bias."""
         LinearTerm = np.matmul(self.X_train, weights)+bias
         ExponentialEvaluation = np.exp(-self.y_train * LinearTerm)
         
@@ -85,7 +85,8 @@ Iris = datasets.load_iris()
 X = Iris.data
 y = Iris.target
 
-New_y = []
+
+New_y = [] # going to make this a two-class linearly-separable data
 for e in y:
     if e == 0:
         New_y.append(-1)
