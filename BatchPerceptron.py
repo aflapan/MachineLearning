@@ -16,7 +16,7 @@ class BatchPerceptron:
     def Train(self, MaxIter = 10000):
         """Trains the batch perceptron algorithm. Guaranteed 
         to converge for the linearly seperable case. Returns
-        discriminant vector w for seperable case. If maximum number
+        discriminant vector w  and bias for seperable case. If maximum number
         of iteration reached, returns vector w and warning stating that 
         data may not be seperable."""
         (n, p) = self.X_train.shape
